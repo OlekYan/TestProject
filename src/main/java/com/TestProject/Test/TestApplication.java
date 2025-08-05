@@ -1,6 +1,7 @@
 package com.TestProject.Test;
 
 import Things.Alien;
+import Things.AlienP;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -21,6 +22,10 @@ public class TestApplication {
 		alien2.code();
 
 		System.out.println(alien2.age);
+
+		AlienP alienP1  = context.getBean(AlienP.class);
+		alienP1.setAge(3);
+		System.out.println(alienP1.getAge());
 
 
 	}
