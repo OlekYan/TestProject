@@ -12,9 +12,15 @@ public class TestApplication {
 
 	public static void main(String[] args) {
 	ApplicationContext context =	SpringApplication.run(TestApplication.class, args);
-		Alien alien = context.getBean(Alien.class);
-		alien.code();
+		Alien alien1 = context.getBean(Alien.class);
+		alien1.code();
+		alien1.age = 10;
+		System.out.println(alien1.age);
 
+		Alien alien2 = context.getBean(Alien.class);
+		alien2.code();
+
+		System.out.println(alien2.age);
 
 
 	}
