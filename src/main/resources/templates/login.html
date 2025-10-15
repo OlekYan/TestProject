@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="bg-light d-flex align-items-center" style="min-height: 100vh;">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 class="mb-3 text-center">Quiz Login</h3>
+          <form method="post" action="/login">
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input name="username" class="form-control" placeholder="admin or user1..user13" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" placeholder="admin123 or pass1..pass13" required />
+            </div>
+            <button class="btn btn-primary w-100" type="submit">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
