@@ -33,8 +33,8 @@ public class QuizService {
     Question current = getCurrentQuestion();
     // score all currentAnswers for this question before rotating
     for (PlayerAnswer answer : currentAnswers.values()) {
-      if (answer.getQuestionId().equals(current.getId())) {
-        if (answer.getSelectedIndex() == current.getCorrectIndex()) {
+      if (answer.getQuestionId().equals(current.id())) {
+        if (answer.getSelectedIndex() == current.correctIndex()) {
           scores.merge(answer.getUsername(), 1, Integer::sum);
         }
       }
@@ -47,7 +47,7 @@ public class QuizService {
     Question current = getCurrentQuestion();
     if (current == null) return;
     // allow one answer per user per question (latest overwrites in current round)
-    currentAnswers.put(username, new PlayerAnswer(username, current.getId(), selectedIndex, Instant.now().toEpochMilli()));
+    currentAnswers.put(username, new PlayerAnswer(username, current.id(), selectedIndex, Instant.now().toEpochMilli()));
   }
 
   public synchronized Map<String, Integer> getLeaderboard() {
